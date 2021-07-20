@@ -16,14 +16,15 @@ ENV PROGRAM_APP  /root/app
 RUN rm -rf /etc/localtime \
 && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/localtime \
-&& mkdir -p ${PROGRAM_APP} \
-&& curl -o- -L https://yarnpkg.com/install.sh | bash
+&& mkdir -p ${PROGRAM_APP}
+
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 RUN $HOME/.yarn/bin/yarn install
 
 USER root
 
-RUN npm install -g webpack && npm install && yarn febuild
+RUN npm install -g webpack && yarn
 
 VOLUME ${PROGRAM_APP}
 WORKDIR  ${PROGRAM_APP}
