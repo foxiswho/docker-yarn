@@ -2,7 +2,7 @@
 docker yarn
 
 ```bash
-docker run -it --rm --name -p 4000:4000 yarn -v www_app:/root/app
+docker run -it --rm --name -p 4000:4000 yarn -v www_app:/root/app foxiswho/node-yarn
 ```
 
 > www_app : 为你的项目目录

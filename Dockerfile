@@ -21,7 +21,7 @@ RUN rm -rf /etc/localtime \
 #&& curl -o- -L https://yarnpkg.com/install.sh | sh \
 && echo "https://mirror.tuna.tsinghua.edu.cn/alpine/edge/testing" >> /etc/apk/repositories \
 && apk update  \
-&& apk add --no-cache nodejs npm yarn git vim \
+&& apk add --no-cache nodejs npm yarn git vim supervisor wget curl tar xz zip unzip \
 #&& apk add --no-cache yarn \
 && which yarn \
 ##&& rm -rf /var/cache/apk/* /tmp/* \
